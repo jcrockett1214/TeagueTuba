@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery</title>
+  <title>Teague Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
@@ -12,6 +12,7 @@
       background-color: #D8D5D5;
       font-family: 'Roboto', sans-serif;
       margin: 0;
+		cursor: pointer;
     }
 
     header {
@@ -22,8 +23,9 @@
     }
 
     h1 {
-      font-size: 54px;
+      font-size: 64px;
       margin: 0;
+		padding: 30px;
     }
 
     main {
@@ -87,7 +89,6 @@
   }
 }
 
-    /* Lightbox Styles */
     .lightbox {
       position: fixed;
       top: 0;
@@ -184,16 +185,16 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Colin Teague. All rights reserved.</p>
+    <p>&copy; 2025 TubaTeague. All rights reserved.</p>
   </footer>
 
-  <!-- Lightbox container -->
+ 
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
     <img id="lightboxImage" src="" alt="Expanded Image">
   </div>
 
-  <!-- Custom JS for Lightbox -->
+ 
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
