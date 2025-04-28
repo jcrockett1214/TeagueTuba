@@ -67,7 +67,7 @@
     main {
       display: flex;
       flex-direction: row;
-      height: calc(100vh - 230px); /* approx height of header + nav + footer */
+      height: calc(100vh - 230px); 
       max-width: 100%;
     }
 
@@ -110,18 +110,14 @@
       background-color: #3b4d17;
       color: #dad9db;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		margin-bottom: 0;
+		margin-top: 30px;
     }
 
     @media screen and (max-width: 768px) {
       h1 {
         font-size: 36px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
+			}
       main {
         flex-direction: column;
         height: auto;
@@ -176,5 +172,3 @@
   <script src="hunt.js"></script>
 </body>
 </html>
-
-

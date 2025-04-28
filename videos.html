@@ -17,20 +17,25 @@
     header {
       background-color: #dad9db;
       color: #333;
-      padding: 20px 0 10px;
+      padding: 10px 0 5px;
       text-align: center;
     }
 
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+	}
+
     .logo {
       width: 120px;
-      height: auto;
-      margin-bottom: 10px;
+
     }
 
     h1 {
       font-size: 64px;
       margin: 0;
-      padding-top: 10px;
       font-weight: bold;
     
     }
@@ -42,7 +47,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      
+      gap: 30px;
       padding: 16px;
     }
 
@@ -121,12 +126,7 @@
     @media screen and (max-width: 768px) {
       h1 {
         font-size: 36px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
+		}
 
       .listing {
         max-width: 100%;
@@ -137,8 +137,10 @@
 <body>
 
   <header>
+		<div class="header-content">
     <img src="logo.jpg" alt="Teague Logo" class="logo">
    <h1>VIDEOS</h1>
+	</div>
     <nav>
       <ul>
         <li><a href="home.html">Home</a></li>

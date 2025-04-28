@@ -20,33 +20,28 @@
 		
 
 
-	nav a:visited {
-  color: #dad9db;
-}
-		
-	nav {
-    list-style: none;
-    margin: 0;
-    text-align: center;
-	background-color:#dad9db;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      background-color: #3b4d17;
+      padding: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
-	li {
-    display: inline-block;
-    margin: 0 20px;
-}
+    nav a {
+      text-decoration: none;
+      color: #dad9db;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
 
-	a {
-    text-decoration: none;
-    color: #dad9db;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-	a {
-    color: #dad9db;
-}
+    nav a:hover {
+      color: #fff;
+    }
 
 #intro {
     background-image: url("https://res.cloudinary.com/dx7kvr83o/image/upload/v1745452083/IMG_4036_pa6kfg.jpg");
@@ -132,57 +127,6 @@ h3 {
 }
 
 
-nav {
-  list-style: none;
-  margin: 0 auto;
-  background-color: #dad9db;
-}
-
-nav ul {
-  padding: 10px;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-nav li {
-  margin: 10px 15px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #007BFF;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-
-@media (max-width: 600px) {
-  .logo {
-    height: 60px;
-    top: 10px;
-    left: 10px;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  h3 {
-    font-size: 16px;
-  }
-
-  nav li {
-    margin: 8px 10px;
-  }
-
-  nav a {
-    font-size: 14px;
-  }
-}
 
 header,
 nav,
@@ -204,11 +148,38 @@ footer{
 }
 
 
+@media screen and (max-width: 800px) {
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; 
+}
+
+.logo {
+    position: static;
+    width: 100px;
+    height: 100px; 
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 36px; 
+    padding-top: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+}
+
 
 </style>		
 <body>
 
     <header>
+			<div class="header-content">
         <img src="logo.jpg" alt="Logo" class="logo">
         <h1>Colin Teague</h1>
         <h3>Educator-Performer</h3>
