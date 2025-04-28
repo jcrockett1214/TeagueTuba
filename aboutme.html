@@ -1,128 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teague About</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-	h1 {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teague About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #dad9db;
+      font-family: 'Roboto', sans-serif;
+      caret-color: transparent;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #dad9db;
       text-align: center;
-      padding: 50px;
-      transition: color 0.1s ease;
+      padding: 10px 0 5px;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .logo {
+      max-width: 120px;
+    }
+
+    h1 {
       font-size: 64px;
-      flex: 1;
-		color: #D8D5D5;
-		}
-	h2 {
-		color: #D8D5D5;
-		}
-		
-		#rightImage {
-      width: 230px;
-      height: auto;
-      border-radius: 10px;
+      color: #333;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      background-color: #3b4d17;
+      padding: 16px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #dad9db;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      height: calc(100vh - 230px); /* approx height of header + nav + footer */
+      max-width: 100%;
+    }
+
+    .about-text {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .about-text h2 {
+      font-size: 38px;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-text p {
+      font-size: 22px;
+      text-indent: 60px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .about-image {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 95%;
+      object-fit: cover;
+      padding-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #3b4d17;
+      color: #dad9db;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 36px;
       }
 
-	#intro p {
-		font-size:22px;
-		text-indent: 60px;
-		line-height: 1.6;
-		}
-	#intro h2 {
-		font-size:28px;
-		color: black;
-		}
-		
-	h2 {
-	font-size: 38px;
-		}
-	
-		
-	nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-	 background-color: #333;
-}
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
 
-	li {
-    display: inline-block;
-    margin: 0 20px;
-}
+      main {
+        flex-direction: column;
+        height: auto;
+      }
 
-	a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
+      .about-image {
+        height: 300px;
+      }
 
-	a {
-    color: #007BFF;
-}
-
-	nav a:visited {
-  color: #007BFF;
-}
-
-	body {
-	background-color: #D8D5D5;
-	font-family: 'Roboto', sans-serif;
-	cursor: pointer;
-	}
-		
-</style>		
+      .about-image img {
+        object-position: top center;
+      }
+    }
+  </style>
+</head>
 <body>
 
-    <header>
-        
-			<nav>
-            <ul>
-             <li><a href="home.html">Home</a></li>
-             <li><a href="aboutme.html">About Me</a></li>
-             <li><a href="videos.html">Videos</a></li>
-             <li><a href="gallery.html">Gallery</a></li>
-             <li><a href="performanceschedule.html">Performance Schedule</a></li>
-             <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-						</br>
-			<img id="rightImage" src="https://fsutubaeuph.org/wp-content/uploads/2024/08/img_3091.jpg?w=1536">
+  <header>
+    <div class="header-content">
+      <img src="logo.jpg" alt="Logo" class="logo" />
+      <h1>Colin Teague</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="performanceschedule.html">Performance Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-			<h2> Colin Teague <h2>
-
-    </header>
-
-    <main>
-        <section id="intro">
-            <h2>About Me</h2>
-            <p>Hello, my name is Colin Teague, and I’m a passionate Tuba player with a deep love for music and performance. I have always believed that music has the power to connect people, and the Tuba, with its rich, resonant sound, allows me to be a part of that connection in a unique and fulfilling way.
-
-I completed my Music Education degree at the University of Kentucky, where I gained a solid foundation in music theory, performance, and education. I was fortunate to work with incredible professors and musicians who helped shape my understanding of music and its many facets.
-
-Currently, I am pursuing my Master’s degree at Florida State University, where I continue to expand my knowledge and skills. At FSU, I am also honored to assist in conducting the Tuba Ensemble, where I help guide and inspire fellow musicians. It’s a rewarding experience to not only perform but also contribute to the growth of other talented Tuba players.
-
-I am deeply committed to both performing and teaching, and I hope to continue to inspire and educate others through the art of music. Whether through solo performances, ensemble work, or teaching, I strive to bring my passion for the Tuba to every note I play.
-
-Thank you for visiting my website, and I look forward to sharing my music and journey with you!</p>
-        </section>
-
-        <section id="content">
-            <h3></h3>
-            <p></p>
-        </section>
-    </main>
+  <main>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>Colin Teague is a passionate tuba player with a deep love for music and performance. He believes in the power of music to connect people, and the tuba—known for its rich, resonant sound—has allowed him to forge meaningful connections through his art.</p>
+      <p>He earned his degree in Music Education from the University of Kentucky, where he developed a strong foundation in music theory, performance, and teaching. During his time there, he had the opportunity to learn from exceptional professors and collaborate with talented musicians who helped shape his musical journey.</p>
+      <p>Currently, Colin is pursuing his Master’s degree at Florida State University. In addition to his studies, he assists in conducting the university’s Tuba Ensemble, where he supports and inspires fellow musicians. This role allows him to combine his love for performance with his dedication to mentorship.</p>
+      <p>Colin is committed to both performing and teaching. Whether through solo appearances, ensemble collaborations, or music education, he strives to share his passion for the tuba and to make a lasting impact through music.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://fsutubaeuph.org/wp-content/uploads/2024/08/img_3091.jpg?w=1536" alt="Colin Teague">
+    </div>
+  </main>
 
   <footer>
     <p>&copy; 2025 TubaTeague. All rights reserved.</p>
   </footer>
 
-    <script src="hunt.js"></script>
+  <script src="hunt.js"></script>
 </body>
 </html>
+
+

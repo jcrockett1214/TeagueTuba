@@ -6,12 +6,17 @@
 }
 
 
+body {
+  caret-color: transparent;
+}
+
 
 header {
-  background-color: #333; 
+  background-color: #dad9db; 
   color: white;
   text-align: center;
   padding: 30px 0;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -19,27 +24,33 @@ h1 {
   margin-bottom: 10px;
 }
 
+nav {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 15px 0;
-  background-color: #333;
+  gap: 35px;
+  padding: 16px 0;
+  background-color: #3b4d17;
+  margin-bottom: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav a {
   text-decoration: none;
-  color: #007BFF;
+  color: #dad9db;
   font-weight: bold;
   font-size: 18px;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #0056b3;
+  color: #dad9db;
 }
 
 
@@ -47,6 +58,7 @@ main {
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
+  margin-top: 0;
 }
 
 h2 {

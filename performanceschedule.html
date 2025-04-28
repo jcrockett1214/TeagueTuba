@@ -4,38 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teague Schedule</title>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      background-color: #D8D5D5;
+      background-color: #dad9db;
       margin: 0;
-      font-family: 'ROBOTO', sans-serif;
-		cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      caret-color: transparent;
     }
 
     header {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
+  background-color: #dad9db;
+  color: #333;
+  padding: 10px 0 5px;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 64px;
-      margin: 0;
-		padding: 40px;
-    }
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; 
+}
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+.logo {
+  max-width: 120px; 
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 64px; 
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding:15px 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
     nav li {
       margin: 0;
@@ -43,14 +56,14 @@
 
     nav a {
       text-decoration: none;
-      color: #007BFF;
+      color: #dad9db;
       font-weight: bold;
       font-size: 18px;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #0056b3;
+      color: #dad9db;
     }
 
     main {
@@ -63,12 +76,13 @@
       text-align: center;
       font-size: 38px;
       margin-bottom: 30px;
+      color:#333;
     }
 
     .listings {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 35px;
       justify-content: center;
     }
 
@@ -89,26 +103,27 @@
     }
 
     .listing a {
-      color: #007BFF;
+      color: #dad9db;
       text-decoration: none;
       font-size: 18px;
       display: inline-block;
       margin-top: 10px;
     }
 
-	 .listing h3 {
-		line-spacing: 2.0;
-		font-weight: none;
-	}
+    .listing h3 {
+      line-height: 2.0;
+      font-weight: normal;
+    }
 
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #333;
+      padding: 15px;
+      background-color: #3b4d17;
+      color: #dad9db;
+      margin-top: 126px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* Responsive Design */
     @media screen and (max-width: 768px) {
       h1 {
         font-size: 36px;
@@ -128,55 +143,51 @@
 <body>
 
   <header>
-			<nav>
-            <ul>
-             <li><a href="home.html">Home</a></li>
-             <li><a href="aboutme.html">About Me</a></li>
-             <li><a href="videos.html">Videos</a></li>
-             <li><a href="gallery.html">Gallery</a></li>
-             <li><a href="performanceschedule.html">Performance Schedule</a></li>
-             <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-    <h1>Performance Schedule</h1>
-
+    <div class="header-content">
+      <img src="logo.jpg" alt="Logo" class="logo"> <!-- Add your actual logo path -->
+      <h1>Performance Schedule</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="performanceschedule.html">Performance Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
     <h2>Upcoming Performances</h2>
     <div class="listings">
       <div class="listing">
-      <h3>04/20/6969</br>
-			Name of Performance</br>
-			111 Address ST Tubaville FL</h3>
-
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">          
-		<img src="https://i.postimg.cc/28764ddy/IMG-0007.jpg" alt="Performance1">
+        <h3>04/20/6969<br>
+        Name of Performance<br>
+        111 Address ST Tubaville FL</h3>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <img src="https://i.postimg.cc/28764ddy/IMG-0007.jpg" alt="Performance1">
         </a>
-
       </div>
+
       <div class="listing">
-      <h3>04/20/6969</br>
-		Name of Performance</br>
-		111 Address ST Tubaville FL</h3>
-
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">          
-		<img src="https://i.postimg.cc/28764ddy/IMG-0007.jpg" alt="Performance2">
+        <h3>04/20/6969<br>
+        Name of Performance<br>
+        111 Address ST Tubaville FL</h3>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <img src="https://i.postimg.cc/28764ddy/IMG-0007.jpg" alt="Performance2">
         </a>
-
       </div>
-            <div class="listing">
-      <h3>04/20/6969</br>
-		Name of Performance</br>
-		111 Address ST Tubaville FL</h3>
 
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">          
-		<img src="https://i.postimg.cc/28764ddy/IMG-0007.jpg" alt="Performance3">
+      <div class="listing">
+        <h3>04/20/6969<br>
+        Name of Performance<br>
+        111 Address ST Tubaville FL</h3>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <img src="https://i.postimg.cc/28764ddy/IMG-0007.jpg" alt="Performance3">
         </a>
-
       </div>
-     
     </div>
   </main>
 

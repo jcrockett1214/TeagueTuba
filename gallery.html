@@ -5,27 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Teague Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 
   <style>
     body {
-      background-color: #D8D5D5;
+      background-color: #dad9db;
       font-family: 'Roboto', sans-serif;
       margin: 0;
-		cursor: pointer;
+      caret-color: transparent;
+      color: #333;
     }
 
     header {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
+      background-color: #dad9db;
       text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .logo {
+      width: 120px;
+
     }
 
     h1 {
       font-size: 64px;
       margin: 0;
-		padding: 30px;
+      padding-top: 20px;
+    }
+
+    nav {
+      background-color: #3b4d17;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 35px;
+      padding: 15px 0;
+      margin: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #dad9db;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
     }
 
     main {
@@ -41,10 +77,14 @@
     }
 
     .gallery {
-  column-count: 3;
-  column-gap: 20px;
-}
+      column-count: 3;
+      column-gap: 20px;
+    }
 
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 20px;
+    }
 
     .gallery img {
       width: 100%;
@@ -54,40 +94,21 @@
       transition: transform 0.3s ease;
     }
 
-    .gallery-item {
-  break-inside: avoid;
-  margin-bottom: 20px;
-    }
-
     .gallery img:hover {
       transform: scale(1.03);
     }
 
     @media (max-width: 768px) {
-      .gallery-item {
-        flex: 1 1 calc(50% - 20px);
-        max-width: calc(50% - 20px);
+      .gallery {
+        column-count: 2;
       }
     }
 
     @media (max-width: 480px) {
-      .gallery-item {
-        flex: 1 1 100%;
-        max-width: 100%;
+      .gallery {
+        column-count: 1;
       }
     }
-
-    @media (max-width: 768px) {
-  .gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery {
-    column-count: 1;
-  }
-}
 
     .lightbox {
       position: fixed;
@@ -127,60 +148,44 @@
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 7px;
       font-size: 14px;
-      color: #333;
+      color: #dad9db;
+      background-color: #3b4d17;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
 <body>
 
   <header>
-			<nav>
-            <ul>
-             <li><a href="home.html">Home</a></li>
-             <li><a href="aboutme.html">About Me</a></li>
-             <li><a href="videos.html">Videos</a></li>
-             <li><a href="gallery.html">Gallery</a></li>
-             <li><a href="performanceschedule.html">Performance Schedule</a></li>
-             <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>    
-
-		<h1>GALLERY</h1>
+    <img src="logo.jpg" alt="Teague Logo" class="logo">
+    <h1>GALLERY</h1> 
+     <nav>
+          <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="performanceschedule.html">Performance Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>    
+    
   </header>
 
   <main>
     <h2>My Favorite Moments</h2>
     <div class="gallery">
-    
-      <div class="gallery-item">
-        <img src="https://i.imgur.com/7wp5ez6.jpeg" alt="Photo 1" data-full="https://i.imgur.com/7wp5ez6.jpeg">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.imgur.com/3tS32bg.jpeg" alt="Photo 2" data-full="https://i.imgur.com/3tS32bg.jpeg">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.imgur.com/SxrpgXk.jpeg" alt="Photo 3" data-full="https://i.imgur.com/SxrpgXk.jpeg">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.imgur.com/IUzicXD.jpeg" alt="Photo 4" data-full="https://i.imgur.com/IUzicXD.jpeg">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.imgur.com/WptDPXG.jpeg" alt="Photo 5" data-full="https://i.imgur.com/WptDPXG.jpeg">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.imgur.com/lZ6LQLd.jpeg" alt="Photo 6" data-full="https://i.imgur.com/lZ6LQLd.jpeg">
-      </div>
-      <div class="gallery-item">
-        <img src="https://i.imgur.com/CGGoRqo.jpeg" alt="Photo 7" data-full="https://i.imgur.com/CGGoRqo.jpeg">
-      </div>
-      <div class="gallery-item">
-        <img src="https://fsutubaeuph.org/wp-content/uploads/2024/08/img_3091.jpg?w=1536" alt="Photo 8" data-full="https://fsutubaeuph.org/wp-content/uploads/2024/08/img_3091.jpg?w=1536">
-      </div>
-      <div class="gallery-item">
-        <img src="https://fsutubaeuph.org/wp-content/uploads/2024/08/img_3091.jpg?w=1536" alt="Photo 9" data-full="https://fsutubaeuph.org/wp-content/uploads/2024/08/img_3091.jpg?w=1536">
-      </div>
+      <div class="gallery-item"><img src="image1.jpg" alt="Photo 1" data-full="image1.jpg"></div>
+      <div class="gallery-item"><img src="image2.jpg" alt="Photo 2" data-full="image2.jpg"></div>
+      <div class="gallery-item"><img src="image3.jpg" alt="Photo 3" data-full="image3.jpg"></div>
+      <div class="gallery-item"><img src="image4.jpg" alt="Photo 4" data-full="image4.jpg"></div>
+      <div class="gallery-item"><img src="image5.jpg" alt="Photo 5" data-full="image5.jpg"></div>
+      <div class="gallery-item"><img src="image6.jpg" alt="Photo 6" data-full="image6.jpg"></div>
+      <div class="gallery-item"><img src="image7.jpg" alt="Photo 7" data-full="image7.jpg"></div>
+      <div class="gallery-item"><img src="image8.jpg" alt="Photo 8" data-full="image8.jpg"></div>
+      <div class="gallery-item"><img src="image8.jpg" alt="Photo 9" data-full="image8.jpg"></div>
     </div>
   </main>
 
@@ -188,13 +193,11 @@
     <p>&copy; 2025 TubaTeague. All rights reserved.</p>
   </footer>
 
- 
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
     <img id="lightboxImage" src="" alt="Expanded Image">
   </div>
 
- 
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
