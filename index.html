@@ -4,107 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teague Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
 	h1 {
       text-align: center;
-      padding: 50px;
+      padding: 10px;
       transition: color 0.1s ease;
       font-size: 64px;
       flex: 1;
-		color: #D8D5D5;
+		color: #333;
+        padding-top: 20px; 
 		}
 		
-		#rightImage {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
+    main {
+      height: calc(100vh - 230px); 
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      background-color: #34623F;
+      padding: 16px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
+    }
 
-	nav a:visited {
-  color: #007BFF;
-}
-		
-	nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-	background-color: #333;
-}
-
-	li {
-    display: inline-block;
-    margin: 0 20px;
-}
-
-	a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-	a {
-    color: #007BFF;
-}
+    nav a {
+      text-decoration: none;
+      color: #dad9db;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
 
 #intro {
     background-image: url("https://res.cloudinary.com/dx7kvr83o/image/upload/v1745452083/IMG_4036_pa6kfg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 80vh;
 
     display: flex;
     align-items: flex-start;     
     justify-content: center;  
     text-align: center;
-    padding: 20px;
-    padding-left: 20px;
-    padding-right: 20px;          
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    margin-top: 0;
+          
 }
 
-#intro h2 {
-    font-size: 58px;
-    font-weight: bold;
-    color: white;             
-    max-width: 900px;
-    line-height: 1.5;
-}
-
-	
-	
 	
 		body {
-	background-color: #D8D5D5;
-	cursor: default
+	background-color: #D0DDD7;
+	caret-color: transparent;
+    font-family: 'Roboto', sans-serif;
 	}
+
+    html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+h3 {
+    font-style: italic;
+    color: #333;
+    padding-bottom: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+header {
+  background-color: #D0DDD7;
+  position: relative;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 200px;
+  width: 200px;
+}
+
+
+h1 {
+  text-align: center;
+  padding: 10px;
+  font-size: 64px;
+  color: #333;
+  margin: 0;
+  padding-top: 60px;
+}
+
+h3 {
+  font-style: italic;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+
+header,
+nav,
+#intro {
+  margin: 0;
+  padding: 0;
+}
+
+#intro {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+footer{
+    color: #D0DDD7;
+    background-color: #34623F;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+}
+
+
+@media screen and (max-width: 800px) {
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; 
+}
+
+.logo {
+    position: static;
+    width: 100px;
+    height: 100px; 
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 36px; 
+    padding-top: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+}
+
 
 </style>		
 <body>
 
     <header>
-        			<nav>
-            <ul>
-             <li><a href="home.html">Home</a></li>
-             <li><a href="aboutme.html">About Me</a></li>
-             <li><a href="videos.html">Videos</a></li>
-             <li><a href="gallery.html">Gallery</a></li>
-             <li><a href="performanceschedule.html">Performance Schedule</a></li>
-             <li><a href="contact.html">Contact</a></li>
-            </ul>
+			<div class="header-content">
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <h1>Colin Teague</h1>
+        <h3>Educator-Performer</h3>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="performanceschedule.html">Performance Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
-
-	<h1>Colin Teague</h1>
-    
-	</header>
+      </header>
+      
 
     <main>
         <section id="intro">
-            <h2>Make Tuba Great Again</h2>
+            
         </section>
 
     </main>
