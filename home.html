@@ -206,6 +206,21 @@ footer{
         <p>&copy; 2025 TubaTeague. All rights reserved.</p>
     </footer>
 
-    <script src="hunt.js"></script>
+    <script>
+
+document.addEventListener("keydown", (e) => {
+  if (e.shiftKey && e.key.toLowerCase() === "t") {
+    const currentPage = window.location.pathname.split("/").pop();
+
+    
+    if (currentPage === "home.html") {
+      window.location.href = "flappytuba.html";
+    } else {
+      window.location.href = "home.html";
+    }
+  }
+});
+</script>
+
 </body>
 </html>

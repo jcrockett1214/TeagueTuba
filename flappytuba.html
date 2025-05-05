@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flappy Tuba</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #87CEEB;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      display: block;
+      margin: auto;
+      background: #87CEEB;
+      border: 2px solid #222;
+    }
+    #retryButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      font-size: 20px;
+      display: none;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<canvas id="game" width="400" height="600"></canvas>
+<button id="retryButton">Retry</button>
+
+<script>
+  const canvas = document.getElementById("game");
+  const ctx = canvas.getContext("2d");
+
+  const tubaImg = new Image();
+  tubaImg.src = "tuba.png";
+
+  const noteImg = new Image();
+  noteImg.src = "note.png";
+
+  let isPaused = false;
+  let gameOver = false;
+  let highScore = 0;
+  let score = 0;
+
+  const tuba = {
+    x: 60,
+    y: 150,
+    width: 40,
+    height: 40,
+    velocity: 0,
+    gravity: 0.35,
+    jump: -6.8,
+    draw() {
+      ctx.drawImage(tubaImg, this.x, this.y, this.width, this.height);
+    },
+    flap() {
+      this.velocity = this.jump;
+    },
+    update() {
+      this.velocity += this.gravity;
+      this.y += this.velocity;
+      if (this.y < 0) {
+        this.y = 0;
+        this.velocity = 0;
+      }
+      if (this.y + this.height > canvas.height) {
+        this.y = canvas.height - this.height;
+        gameOver = true;
+        showRetry();
+      }
+    },
+    reset() {
+      this.y = 150;
+      this.velocity = 0;
+    }
+  };
+
+  const pipes = [];
+  const pipeGap = 140;
+  const pipeWidth = 40;
+  let frame = 0;
+
+  function spawnPipe() {
+    const top = Math.floor(Math.random() * (canvas.height - pipeGap - 100)) + 50;
+    pipes.push({ x: canvas.width, top });
+  }
+
+  function drawPipes() {
+    pipes.forEach(pipe => {
+      ctx.drawImage(noteImg, pipe.x, 0, pipeWidth, pipe.top); // stretch top pipe
+ctx.drawImage(noteImg, pipe.x, pipe.top + pipeGap, pipeWidth, canvas.height - (pipe.top + pipeGap)); // stretch bottom pipe
+    });
+  }
+
+  function updatePipes() {
+    pipes.forEach(pipe => {
+      pipe.x -= 2;
+      if (
+        tuba.x + tuba.width > pipe.x && tuba.x < pipe.x + pipeWidth &&
+        (tuba.y < pipe.top || tuba.y + tuba.height > pipe.top + pipeGap)
+      ) {
+        gameOver = true;
+        showRetry();
+      }
+
+      if (pipe.x + pipeWidth === tuba.x) {
+        score++;
+      }
+    });
+
+    if (pipes.length > 0 && pipes[0].x + pipeWidth < 0) {
+      pipes.shift();
+    }
+
+    if (frame % 90 === 0) {
+      spawnPipe();
+    }
+  }
+
+  const clouds = [
+    { x: 300, y: 80, speed: 0.3 },
+    { x: 100, y: 50, speed: 0.2 }
+  ];
+
+  function drawClouds() {
+    ctx.fillStyle = "#fff";
+    clouds.forEach(cloud => {
+      ctx.beginPath();
+      ctx.arc(cloud.x, cloud.y, 20, 0, Math.PI * 2);
+      ctx.arc(cloud.x + 25, cloud.y + 10, 25, 0, Math.PI * 2);
+      ctx.arc(cloud.x + 50, cloud.y, 20, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+
+  function updateClouds() {
+    clouds.forEach(cloud => {
+      cloud.x -= cloud.speed;
+      if (cloud.x < -60) cloud.x = canvas.width + 60;
+    });
+  }
+
+  function showRetry() {
+    document.getElementById("retryButton").style.display = "block";
+    if (score > highScore) highScore = score;
+  }
+
+  function hideRetry() {
+    document.getElementById("retryButton").style.display = "none";
+  }
+
+  function resetGame() {
+    tuba.reset();
+    pipes.length = 0;
+    score = 0;
+    gameOver = false;
+    frame = 0;
+    hideRetry();
+  }
+
+  function drawScore() {
+    ctx.fillStyle = "#000";
+    ctx.font = "20px Arial";
+    ctx.fillText("Score: " + score, 10, 25);
+    ctx.fillText("High: " + highScore, 10, 50);
+  }
+
+  function gameLoop() {
+    if (!isPaused && !gameOver) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawClouds();
+      updateClouds();
+
+      tuba.update();
+      tuba.draw();
+
+      updatePipes();
+      drawPipes();
+      drawScore();
+
+      frame++;
+    }
+    if (isPaused && !gameOver) {
+      ctx.fillStyle = "#000";
+      ctx.font = "30px Arial";
+      ctx.fillText("Paused", canvas.width / 2 - 50, canvas.height / 2);
+    }
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+      e.preventDefault(); // prevent scroll
+      if (!gameOver) tuba.flap();
+    }
+    if (e.code === "KeyP") {
+      isPaused = !isPaused;
+    }
+  });
+
+  document.getElementById("retryButton").addEventListener("click", () => {
+    resetGame();
+  });
+
+  // Disable space scrolling on mobile too
+  window.addEventListener('keydown', e => {
+    if (e.code === 'Space') e.preventDefault();
+  });
+
+  gameLoop();
+
+document.addEventListener("keydown", (e) => {
+  if (e.shiftKey && e.key.toLowerCase() === "t") {
+    const currentPage = window.location.pathname.split("/").pop();
+
+    
+    if (currentPage === "home.html") {
+      window.location.href = "flappytuba.html";
+    } else {
+      window.location.href = "home.html";
+    }
+  }
+});
+</script>
+</body>
+</html>
